@@ -11,3 +11,4 @@ with engine.begin() as conn:  # ensures transaction is committed
         dept_str = str(dept).strip()
         if dept_str:
             conn.execute(text("INSERT IGNORE INTO departments (name) VALUES (:dept_name)"), {'dept_name': dept_str})
+print("Department column unique values:", df['department'].dropna().unique())
